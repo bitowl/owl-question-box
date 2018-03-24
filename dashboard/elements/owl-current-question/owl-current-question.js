@@ -2,7 +2,7 @@
     'use strict';
 
     const boxMessages = nodecg.Replicant('messages');
-    const selectedMessage = nodecg.Replicant('selected-message');
+    const selectedMessage = nodecg.Replicant('selected-question');
 
     class OwlCurrentQuestion extends Polymer.Element {
         static get is() {
@@ -49,7 +49,6 @@
             nodecg.sendMessage('hide-question');
         }
         cancelMessage() {
-            console.log('cancel?');
             selectedMessage.value = null;
         }
     }

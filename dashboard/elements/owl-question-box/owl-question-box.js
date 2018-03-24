@@ -2,7 +2,7 @@
     'use strict';
 
     const boxMessages = nodecg.Replicant('messages');
-    const selectedMessage = nodecg.Replicant('selected-message');
+    const selectedMessage = nodecg.Replicant('selected-question');
 
 
     class OwlQuestionBox extends Polymer.MutableData(Polymer.Element) {

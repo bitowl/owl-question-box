@@ -26,8 +26,7 @@
         "title": "Question Box",
         "width": 2,
         "file": "question-box.html",
-        "headerColor": "#9f9bbd",
-        "workspace": "Stream"
+        "headerColor": "#9f9bbd"
       }
     ]
   },

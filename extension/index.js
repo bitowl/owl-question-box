@@ -6,12 +6,14 @@ module.exports = function (nodecg) {
         defaultValue: []
     });
 
-    const selectedMessage = nodecg.Replicant('selected-message', {
+    const selectedMessage = nodecg.Replicant('selected-question', {
         defaultValue: null
     });
 
-    nodecg.listenFor('send-message', 'owl-twitch-chat', value => {
-        boxMessages.value.push(value); 
-    });
+    nodecg.listenFor('add-question', addQuestion);
 
+    function addQuestion(question) {
+        boxMessages.value.push(question); 
+    }
+    return addQuestion;
 };
