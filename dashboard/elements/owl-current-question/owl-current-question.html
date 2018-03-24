@@ -1,0 +1,34 @@
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<dom-module id="owl-current-question">
+	<template>
+		<style>
+			:host {
+			}
+            #avatar {
+                width: 64px;
+                height: 64px;
+            }
+            #currentMessage {
+                display: flex;
+            }
+            #actualMessage {
+                flex-grow: 1;
+            }
+        </style>
+        <div id="currentMessage">
+        <template is="dom-if" if="{{isMessageSelected}}">
+            <img src="[[message.avatar]]" id="avatar"/>
+            <div id="actualMessage">
+                <div class="name">[[message.display_name]]</div>
+                <div class="text">[[message.message]]</div>
+            
+            </div>
+        </template>
+        </div>
+        <paper-button on-tap="showMessage" id="show">show</paper-button>
+        <paper-button on-tap="hideMessage" id="hide">hide</paper-button>
+        <paper-button on-tap="cancelMessage" id="cancel">cancel</paper-button>
+    </template>
+    
+	<script src="owl-current-question.js"></script>
+</dom-module>

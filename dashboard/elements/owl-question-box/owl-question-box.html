@@ -1,0 +1,51 @@
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<dom-module id="owl-question-box">
+	<template>
+        <style>
+        :host {
+        }
+        #messages {
+            height: 300px;
+            overflow-y: scroll;
+        }
+        .chat-message {
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .send-button {
+            min-width: 40px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        .leftpart {
+            flex-grow: 1;
+        }
+        .name {
+            font-weight: bold;
+            color: rgb(160, 160, 160);
+            font-size: 14px;
+        }
+        .text {
+            color: #444;
+        }
+        
+    </style>
+    <div id="messages">
+        <template is="dom-repeat" items="[[messages]]" mutable-data>
+            <div class="chat-message">
+                <div class="leftpart">
+                    <div class="name">[[item.display_name]]</div>
+                    <div class="text">[[item.message]]</div>
+                </div>
+                <paper-button on-tap="selectMessage" class="send-button" disabled$="[[sendButtonDisabled]]"><iron-icon icon="icons:question-answer"></iron-icon></paper-button>
+                <paper-button on-tap="removeMessage" class="send-button"><iron-icon icon="icons:delete"></iron-icon></paper-button>
+            </div>
+        </template>
+    </div>
+	</template>
+
+	<script src="owl-question-box.js"></script>
+</dom-module>
