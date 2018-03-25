@@ -1,4 +1,5 @@
 <link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/marked-element/marked-element.html">
 <dom-module id="owl-current-question">
 	<template>
 		<style>
@@ -19,8 +20,8 @@
         <template is="dom-if" if="{{isMessageSelected}}">
             <img src="[[message.avatar]]" id="avatar"/>
             <div id="actualMessage">
-                <div class="name">[[message.display_name]]</div>
-                <div class="text">[[message.message]]</div>
+                <div class="name">[[message.user]]</div>
+                <marked-element markdown="[[message.text]]"><div slot="markdown-html" class="text"></div></marked-element>
             
             </div>
         </template>
