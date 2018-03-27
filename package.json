@@ -24,9 +24,26 @@
       {
         "name": "question-box",
         "title": "Question Box",
-        "width": 2,
+        "width": 3,
         "file": "question-box.html",
         "headerColor": "#9f9bbd"
+      },
+      {
+        "name": "delete-question",
+        "title": "Delete Question?",
+        "width": 2,
+        "file": "delete-question.html",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "Yes",
+            "type": "confirm"
+          },
+          {
+            "name": "No",
+            "type": "dismiss"
+          }
+        ]
       }
     ]
   },
