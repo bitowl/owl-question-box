@@ -22,6 +22,9 @@
             nodecg.listenFor('delete-question', () => {
                 this.deleteMessage();
             });
+            nodecg.listenFor('delete-all-questions', () => {
+                this.deleteAllQuestions();
+            });
 
         }
 
@@ -36,6 +39,10 @@
 
         deleteMessage() {
             boxMessages.value.splice(boxMessages.value.indexOf(this.messageToDelete), 1);
+        }
+
+        deleteAllQuestions() {
+            boxMessages.value = [];
         }
     }
     customElements.define(OwlQuestionBox.is, OwlQuestionBox);

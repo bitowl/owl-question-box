@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Do you really want to delete all questions?
+    <script>
+        document.addEventListener('dialog-confirmed', function () {
+            nodecg.sendMessage('delete-all-questions');
+        });
+    </script>
+</body>
+
+</html>

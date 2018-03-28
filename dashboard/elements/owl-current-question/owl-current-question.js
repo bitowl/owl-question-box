@@ -33,6 +33,10 @@
                 selectedMessage.value = null;
             }, 1000);
         }
+
+        confirmDeleteAllQuestions() {
+            nodecg.getDialog('delete-all-questions').open();
+        }
     }
     customElements.define(OwlCurrentQuestion.is, OwlCurrentQuestion);
 })();

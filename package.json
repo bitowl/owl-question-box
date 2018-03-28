@@ -44,6 +44,23 @@
             "type": "dismiss"
           }
         ]
+      },
+      {
+        "name": "delete-all-questions",
+        "title": "Delete all questions?",
+        "width": 2,
+        "file": "delete-all-questions.html",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "Yes",
+            "type": "confirm"
+          },
+          {
+            "name": "No",
+            "type": "dismiss"
+          }
+        ]
       }
     ]
   },
