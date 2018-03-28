@@ -58,20 +58,26 @@
                     min-width: 50px;
                 }
             }
+            .avatar {
+                width: 64px;
+                height: 64px;
+                margin-right: 8px;
+            }
         </style>
         <div id="messages">
             <template is="dom-repeat" items="[[messages]]" mutable-data>
                 <div class="chat-message">
-                    <div class="leftpart">
+                    <img class="avatar" src="[[item.avatar]]" />
+                    <div class="leftpart">    
                         <div class="name">[[item.user]]</div>
                         <marked-element markdown="[[item.text]]">
                             <div slot="markdown-html" class="text"></div>
                         </marked-element>
                     </div>
-                    <paper-button on-tap="selectMessage" class="send-button" disabled$="[[sendButtonDisabled]]">
+                    <paper-button raised on-tap="selectMessage" class="send-button" disabled$="[[sendButtonDisabled]]">
                         <iron-icon icon="icons:question-answer"></iron-icon>
                     </paper-button>
-                    <paper-button on-tap="confirmDeleteMessage" class="deleteButton">
+                    <paper-button raised on-tap="confirmDeleteMessage" class="deleteButton">
                         <iron-icon icon="icons:delete"></iron-icon>
                     </paper-button>
                 </div>

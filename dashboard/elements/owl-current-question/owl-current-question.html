@@ -8,9 +8,12 @@
             #avatar {
                 width: 64px;
                 height: 64px;
+                flex-shrink: 0;
+                margin-right: 8px;
             }
             #currentMessage {
                 display: flex;
+                padding-top: 16px;
             }
             #actualMessage {
                 flex-grow: 1;
@@ -35,9 +38,7 @@
             </div>
         </template>
         </div>
-        <paper-button on-tap="showMessage" id="show">show</paper-button>
-        <paper-button on-tap="hideMessage" id="hide">hide</paper-button>
-        <paper-button on-tap="cancelMessage" id="cancel">cancel</paper-button>
+        <paper-button on-tap="hideMessage" id="hide" raised>hide</paper-button>
     </template>
     
 	<script src="owl-current-question.js"></script>

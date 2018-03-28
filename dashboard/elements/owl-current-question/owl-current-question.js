@@ -13,17 +13,16 @@
             super.ready();
             selectedMessage.on('change', newVal => {
                 this.isMessageSelected = newVal !== null;
-                this.message = newVal
-                this.$.show.disabled = newVal === null ? true : false;
-                this.$.hide.disabled = true;
-                this.$.cancel.disabled = newVal === null ? true : false;
+                this.message = newVal;
+                this.$.hide.disabled = newVal === null;
             });
+        }
 
-            nodecg.listenFor('showed-question', () => {
-                this.$.hide.disabled = false;
-            });
-            nodecg.listenFor('hided-question', () => {
-                
+        hideMessage() {
+            this.$.hide.disabled = true;
+            nodecg.sendMessage('hide-question');
+
+            setTimeout(() => {
                 for (var i = 0; i < boxMessages.value.length; i++) {
                     if (boxMessages.value[i].id === selectedMessage.value.id) {
                         console.log('found something');
@@ -31,25 +30,8 @@
                         break;
                     }
                 }
-
-                
                 selectedMessage.value = null;
-            });
-        }
-
-        showMessage() {
-            this.$.show.disabled = true;
-            this.$.cancel.disabled = true;
-            nodecg.sendMessage('show-question');
-        }
-
-        hideMessage() {
-            this.$.hide.disabled = true;
-            
-            nodecg.sendMessage('hide-question');
-        }
-        cancelMessage() {
-            selectedMessage.value = null;
+            }, 1000);
         }
     }
     customElements.define(OwlCurrentQuestion.is, OwlCurrentQuestion);
