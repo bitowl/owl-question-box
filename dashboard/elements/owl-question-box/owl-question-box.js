@@ -34,6 +34,12 @@
 
         selectMessage(event) {
             selectedMessage.value = event.model.item;
+            for (var i = 0; i < boxMessages.value.length; i++) {
+                if (boxMessages.value[i].id === event.model.item.id) {
+                    boxMessages.value.splice(i, 1);
+                    break;
+                }
+            }
         }
 
         confirmDeleteMessage(event) {

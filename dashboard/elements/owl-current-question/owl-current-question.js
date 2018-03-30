@@ -23,13 +23,6 @@
             nodecg.sendMessage('hide-question');
 
             setTimeout(() => {
-                for (var i = 0; i < boxMessages.value.length; i++) {
-                    if (boxMessages.value[i].id === selectedMessage.value.id) {
-                        console.log('found something');
-                        boxMessages.value.splice(i, 1);
-                        break;
-                    }
-                }
                 selectedMessage.value = null;
             }, 1000);
         }
