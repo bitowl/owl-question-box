@@ -3,7 +3,7 @@
 
     const boxMessages = nodecg.Replicant('messages');
     const selectedMessage = nodecg.Replicant('selected-question');
-
+    const boxEnabledRepl = nodecg.Replicant('enabled', {persistent: false});
 
     class OwlQuestionBox extends Polymer.MutableData(Polymer.Element) {
         static get is() {
@@ -24,6 +24,10 @@
             });
             nodecg.listenFor('delete-all-questions', () => {
                 this.deleteAllQuestions();
+            });
+
+            boxEnabledRepl.on('change', value => {
+                this.sendButtonDisabled = !value;
             });
 
         }
