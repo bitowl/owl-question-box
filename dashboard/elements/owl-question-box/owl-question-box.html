@@ -1,22 +1,15 @@
 <link rel="import" href="../../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../../bower_components/marked-element/marked-element.html">
+<link rel="import" href="/bundles/owl-nodecg-styles/dashboard/css/bitowl-theme.html">
 <dom-module id="owl-question-box">
     <template>
-        <style>
+        <style include="bitowl-theme">
             :host {}
 
             #messages {
                 height: 300px;
                 overflow-y: scroll;
-            }
-
-            .chat-message {
-                border-bottom: 1px solid #ccc;
-                display: flex;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                align-items: center;
             }
 
             .send-button {
@@ -28,18 +21,11 @@
 
             .leftpart {
                 flex-grow: 1;
-                overflow: auto;
+                overflow-x: auto;
+                overflow-y: hidden;
             }
 
-            .name {
-                font-weight: bold;
-                color: rgb(160, 160, 160);
-                font-size: 14px;
-            }
 
-            .text {
-                color: #444;
-            }
 
             img {
                 vertical-align: middle;
@@ -55,8 +41,6 @@
 
             .deleteButton {
                 --paper-button: {
-                    background-color: #C9513E;
-                    color: white;
                     min-width: 50px;
                 }
             }
@@ -68,7 +52,7 @@
         </style>
         <div id="messages">
             <template is="dom-repeat" items="[[messages]]" mutable-data>
-                <div class="chat-message">
+                <div class="owl-chat-message">
                     <img class="avatar" src="[[item.avatar]]" />
                     <div class="leftpart">    
                         <div class="name">[[item.user]]</div>
@@ -76,10 +60,10 @@
                             <div slot="markdown-html" class="text"></div>
                         </marked-element>
                     </div>
-                    <paper-button raised on-tap="selectMessage" class="send-button" disabled$="[[sendButtonDisabled]]">
+                    <paper-button on-tap="selectMessage" class="send-button nodecg-accept" disabled$="[[sendButtonDisabled]]">
                         <iron-icon icon="icons:question-answer"></iron-icon>
                     </paper-button>
-                    <paper-button raised on-tap="confirmDeleteMessage" class="deleteButton">
+                    <paper-button on-tap="confirmDeleteMessage" class="deleteButton nodecg-reject">
                         <iron-icon icon="icons:delete"></iron-icon>
                     </paper-button>
                 </div>

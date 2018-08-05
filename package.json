@@ -1,6 +1,6 @@
 {
   "name": "owl-question-box",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Box that can receive questions from owl-twitch-chat or owl-twitter-search",
   "homepage": "",
   "author": {
@@ -19,14 +19,17 @@
     "nodecg-bundle"
   ],
   "nodecg": {
-    "compatibleRange": "~0.9.0",
+    "compatibleRange": "~1.1.0",
+    "bundleDependencies": {
+      "owl-nodecg-styles": "^0.0.0"
+    },
     "dashboardPanels": [
       {
         "name": "question-box",
         "title": "Question Box",
         "width": 3,
         "file": "question-box.html",
-        "headerColor": "#9f9bbd"
+        "headerColor": "#525F78"
       },
       {
         "name": "delete-question",
