@@ -10,6 +10,10 @@ module.exports = function (nodecg) {
         defaultValue: null
     });
 
+    const enabledRepl = nodecg.Replicant('enabled', {
+        defaultValue: true
+    });
+
     nodecg.listenFor('add-question', addQuestion);
 
     function addQuestion(question) {
